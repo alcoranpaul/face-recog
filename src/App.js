@@ -10,6 +10,21 @@ import 'tachyons'
 import ParticlesBg from 'particles-bg';
 import React, { Component } from 'react'
 
+
+const initialState = {
+  input: '',
+  imageURL: '',
+  box: {},
+  route: "signin",
+  signedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: "",
+    entries: 0,
+    joined: ""
+  }
+}
 class App extends Component {
   constructor() {
     super();
@@ -142,7 +157,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === "signin") {
-      this.setState({ signedIn: false })
+      this.setState(initialState)
     }
     else if (route === "home") {
       this.setState({ signedIn: true })
