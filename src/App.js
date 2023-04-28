@@ -149,6 +149,7 @@ class App extends Component {
                 Object.assign(this.state.user, { entries: count })
               )
             })
+            .catch(console.log)
         }
         this.displayFaceBox(this.calculateFaceLocation(result));
       })
