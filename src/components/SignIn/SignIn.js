@@ -28,8 +28,9 @@ class SignIn extends Component {
         })
             .then(res => res.json())
             .then(data => {
-                if (data === 'success') {
+                if (data.id) {
                     console.log('Success on signin!')
+                    this.props.loadUser(data)
                     this.props.onRouteChange('home')
                 }
             })
@@ -44,7 +45,7 @@ class SignIn extends Component {
                 <main className="pa4 black-80 w-100">
                     <div className="measure">
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="f2 fw6 ph0 mh0">Sign In</legend>
+                            <legend className="f2 fw6 ph0 mh0 underline">Sign In</legend>
                             <div className="mt3">
                                 <label className="tl db fw6 lh-copy f4" htmlFor="email-address">Email</label>
                                 <input
